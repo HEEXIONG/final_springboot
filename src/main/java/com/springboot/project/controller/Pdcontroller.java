@@ -31,7 +31,7 @@ public class Pdcontroller {
 	private Pdservice pdservice;
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String helloSpring() {
+    public String home() {
         return "index";
     }
 	
