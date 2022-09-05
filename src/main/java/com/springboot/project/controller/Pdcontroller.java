@@ -3,6 +3,8 @@ package com.springboot.project.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -20,7 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springboot.project.model.Pdmodel;
 import com.springboot.project.sevice.Pdservice;
 
-
+//아래 기본 시큐리티 적용안되게하는구문 시큐리티 구현시 삭제 
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @Controller
 public class Pdcontroller {
 
