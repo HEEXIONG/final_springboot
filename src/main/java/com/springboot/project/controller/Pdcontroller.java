@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springboot.project.model.Pdmodel;
 import com.springboot.project.sevice.Pdservice;
 
+import lombok.extern.java.Log;
+
 //아래 기본 시큐리티 적용안되게하는구문 시큐리티 구현시 삭제 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @Controller
@@ -33,7 +35,7 @@ public class Pdcontroller {
 	@GetMapping
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String home() {
-        return "index";
+		return "index";
     }
 	
 	  @RequestMapping(value = "/findAll", method = RequestMethod.GET) public
@@ -44,9 +46,9 @@ public class Pdcontroller {
 		 return new ResponseEntity<>(pdservice.save(Products), HttpStatus.CREATED);
 	  }
 	 
-	 @GetMapping("/view/{pdcode}")//상세보기
+	 @GetMapping("/board/detail/{pdcode}")//상세보기
 	 public ResponseEntity<?> findById(@PathVariable Long pdcode) {
-		 
+		 System.out.println("상세보기실행");
 		 return new ResponseEntity<>(pdservice.select(pdcode),HttpStatus.OK);
 	 }
 	 
