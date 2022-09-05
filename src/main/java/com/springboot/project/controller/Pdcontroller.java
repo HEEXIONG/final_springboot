@@ -30,6 +30,7 @@ public class Pdcontroller {
 	@Autowired
 	private Pdservice pdservice;
 	
+	@GetMapping
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String home() {
         return "index";
