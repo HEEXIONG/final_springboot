@@ -83,7 +83,7 @@ public class Pdcontroller {
     
     /**
      * 글 수정 처리 후 목록으로 이동
-     * @param board
+     * @param Pdboard
      * @return
      */
     
@@ -95,7 +95,7 @@ public class Pdcontroller {
     
     /**
      * 글 삭제 처리 후 목록으로 이동
-     * @param board
+     * @param Pdboard
      * @return
      */
     
