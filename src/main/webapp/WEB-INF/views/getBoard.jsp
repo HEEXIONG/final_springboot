@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -31,11 +32,14 @@
         <table style="width: 700px; margin: auto">
             <tr>
                 <td width="70" style="background-color: dodgerblue; color: cornsilk">제목</td>
+                
                 <td><input type="text" name="title" value="${Pdboard.title}"/></td>
             </tr>
             <tr>
                 <td style="background-color: dodgerblue; color: cornsilk">작성자</td>
+                <c:forEach var="Pdboard" items="${pdlist}">
                 <td><input type="text" name="admin" value="${Pdboard.admin}"/></td>
+                </c:forEach>
             </tr>
             <tr>
                 <td style="background-color: dodgerblue; color: cornsilk">내용</td>
@@ -51,7 +55,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <div style="text-align: center;">
+                    <div style="text-align: center">
                         <input type="submit" value="수정"/>
                     </div>
                 </td>
@@ -60,7 +64,10 @@
     </form>
     <hr>
     <a href="insertBoardView">글등록</a>
-    <a href="deleteBoard?seq=${Pdboard.pdcode}">글삭제</a>
+    <c:forEach var="Pdboard" items="${pdlist}">
+    <tb><a href="deleteBoard?pdcode=${Pdboard.pdcode}">글삭제</a></tb>
+    </c:forEach>
+    <a href="deleteBoard?pdcode=${Pdboard.pdcode}">글삭제</a>
     <a href="getBoardList">글목록</a>
 </div>
 </body>
