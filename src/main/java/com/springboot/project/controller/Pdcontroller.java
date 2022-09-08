@@ -77,7 +77,7 @@ public class Pdcontroller {
      */
     @RequestMapping("/getBoard")
     public String getpdBoard(Pdboard pdboard, Model model) {
-        model.addAttribute("pdboard", pdService.getpdBoard((pdboard)));
+        model.addAttribute("pdread", pdService.getpdBoard((pdboard)));
         return "getBoard";
     }
     
