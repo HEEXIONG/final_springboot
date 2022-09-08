@@ -1,7 +1,5 @@
 package com.springboot.project.controller;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +40,10 @@ public class Pdcontroller {
     @Autowired
     private PdService pdService;
     
+    /**
+     * 상품 목록 화면
+     * @return
+     */
     @RequestMapping("/getBoardList")
     public String getpdBoardList(Model model, Pdboard pdboard) {
         List<Pdboard> pdlist = pdService.getpdBoardList(pdboard);
