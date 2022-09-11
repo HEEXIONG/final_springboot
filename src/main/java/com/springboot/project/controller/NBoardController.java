@@ -13,7 +13,7 @@ import com.springboot.project.model.NBoard;
 import com.springboot.project.sevice.NBoardService;
 
 //아래 기본 시큐리티 적용안되게하는구문 시큐리티 구현시 삭제 
-@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+//@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @Controller
 public class NBoardController {
 
