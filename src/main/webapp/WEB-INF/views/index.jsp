@@ -12,7 +12,7 @@
 <p>principal : <sec:authentication property="principal" /> </p>
 <p>사용자아이디 : <sec:authentication property="principal.username" /> </p>
 <p>사용자비밀번호 : <sec:authentication property="principal.password" /> </p>
-<p>사용자이메일 : <sec:authentication property="principal.email" /> </p>
+<p>사용자닉네임 : <sec:authentication property="principal.nickname" /> </p>
 
 
 <%-- <p>UsersVO : <sec:authentication property="principal.user" /> </p>

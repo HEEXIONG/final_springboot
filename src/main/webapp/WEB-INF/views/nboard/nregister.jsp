@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +20,7 @@
         </tr>
         <tr>
             <td style="background-color: dodgerblue; color: cornsilk">작성자</td>
-            <td><input type="text" name="nwriter"/></td>
+            <td><input type="text" name="nwriter" value='<sec:authentication property="principal.nickname"/>' /></td>
         </tr>
         <tr>
             <td style="background-color: dodgerblue; color: cornsilk">내용</td>

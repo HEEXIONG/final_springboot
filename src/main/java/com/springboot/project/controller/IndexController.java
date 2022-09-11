@@ -50,7 +50,8 @@ public class IndexController {
 	@PostMapping("/join")
 	public String join(Admin admin) {
 		System.out.println(admin);
-		admin.setRole("ROLE_USER"); 
+		admin.setRole("ROLE_ADMIN");
+		admin.setNickname("관리자");
 		String rawPassword = admin.getPassword();
 		String encPaswword = bcryptPasswordEncoder.encode(rawPassword);
 		admin.setPassword(encPaswword);
