@@ -5,17 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.springboot.project.model.Criteria;
 import com.springboot.project.model.NBoard;
 import com.springboot.project.repository.NBoardRepository;
 
 @Service
-public class NBoardServiceImpl implements NBoardService {
+public class NBoardServiceImpl implements NBoardService{
 
 	@Autowired
 	private NBoardRepository nboardRepository;
 	
 	@Override
-	public List<NBoard> getList(NBoard nboard) {
+	public List<NBoard> getList(NBoard nboard, Criteria cri) {
 		return (List<NBoard>) nboardRepository.findAll();
 	}
 
@@ -44,5 +45,11 @@ public class NBoardServiceImpl implements NBoardService {
 	@Override
 	public void deleteNBoard(NBoard nboard) {
 		nboardRepository.deleteById(nboard.getNbno());
+	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.springboot.project.model.Criteria;
 import com.springboot.project.model.NBoard;
+import com.springboot.project.model.PageDTO;
 import com.springboot.project.sevice.NBoardService;
 
 //아래 기본 시큐리티 적용안되게하는구문 시큐리티 구현시 삭제 
@@ -21,9 +23,11 @@ public class NBoardController {
 	private NBoardService nboardService;
 	
 	@RequestMapping("/board/list")
-	public String nList(Model model, NBoard nboard) {
-		List<NBoard> nlist = nboardService.getList(nboard);
+	public String nList(Model model, NBoard nboard, Criteria cri) {
+		List<NBoard> nlist = nboardService.getList(nboard, cri);
 		model.addAttribute("nlist", nlist);
+		int total = nboardService.getTotal(cri);
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 		return "/nboard/nlist";
 	}
 	

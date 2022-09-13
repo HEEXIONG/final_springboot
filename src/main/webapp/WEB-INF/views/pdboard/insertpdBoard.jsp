@@ -50,14 +50,6 @@
         </tr>
     </table>
 </form>
-	<div class="container">
-		<form action="insertBoard" method="post" enctype="multipart/form-data">
-			<input type="file" name="files"> 
-			<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
-
-			<button type="submit" class="btn btn-dark">업로드</button>
-		</form>
-	</div>
 </div>
 </body>
 </html>
