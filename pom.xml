@@ -23,16 +23,7 @@
 		  <groupId>org.springframework.security</groupId>
 		  <artifactId>spring-security-taglibs</artifactId>
 		</dependency>
-	
-<<<<<<< HEAD
-=======
-	
-	
-	
-	
-	
-	
->>>>>>> branch 'master' of https://github.com/HEEXIONG/final_springboot.git
+
 	<!-- jsp테스트를위해 주석처리함  -->
  <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
