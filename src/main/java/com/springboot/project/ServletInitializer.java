@@ -7,7 +7,11 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(FinalProjectApplication.class);
+		return application.sources(FinalSpringbootApplication.class);
+<<<<<<< HEAD
 	}
+=======
+>>>>>>> branch 'master' of https://github.com/HEEXIONG/final_springboot.git
 
+	}
 }

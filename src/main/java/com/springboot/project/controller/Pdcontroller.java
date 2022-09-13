@@ -3,8 +3,6 @@ package com.springboot.project.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +11,7 @@ import com.springboot.project.model.Pdboard;
 import com.springboot.project.sevice.PdService;
 
 //아래 기본 시큐리티 적용안되게하는구문 시큐리티 구현시 삭제 
-@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+//@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @Controller
 public class Pdcontroller {
 
@@ -40,10 +38,6 @@ public class Pdcontroller {
     @Autowired
     private PdService pdService;
     
-    /**
-     * 상품 목록 화면
-     * @return
-     */
     @RequestMapping("/getBoardList")
     public String getpdBoardList(Model model, Pdboard pdboard) {
         List<Pdboard> pdlist = pdService.getpdBoardList(pdboard);
@@ -79,7 +73,7 @@ public class Pdcontroller {
      */
     @RequestMapping("/getBoard")
     public String getpdBoard(Pdboard pdboard, Model model) {
-        model.addAttribute("pdboard", pdService.getpdBoard((pdboard)));
+        model.addAttribute("pdread", pdService.getpdBoard((pdboard)));
         return "getBoard";
     }
     
