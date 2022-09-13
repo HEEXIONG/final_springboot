@@ -5,9 +5,12 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -16,33 +19,33 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import lombok.Data;
 
 
-@Data
 @Entity
-@Table(name = "qna_board")
+@Data
+@Table(name = "tbl_reply")
 @EntityListeners(AuditingEntityListener.class)
-public class QnaVO {
-	
+public class ReplyVO {
+
 	
 	@Id
 	@GeneratedValue
-	@Column(name = "qno")
-	private Long qno;
+	@Column(name = "rno")
+	private Long rno;
 	
-	@Column(name = "q_title")
-	private String q_title;
+	//글번호 참조키
+	@ManyToOne
+	@JoinColumn(name = "qno")
+	private QnaVO qno;
 	
-	@Column(name = "q_content")
-	private String q_content;
+	@Column(name = "reply")
+	private String reply;
 	
-	@Column(name = "q_writer")
-	private String q_writer;
+	@Column(name = "replyer")
+	private String replyer;
 	
 	@CreatedDate
-	private Date regdate;
+	private Date replyDate;
 	
 	@CreatedDate
-	private Date updatedate;
-	
-	
+	private Date updateDate;
 	
 }

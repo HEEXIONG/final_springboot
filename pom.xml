@@ -18,11 +18,17 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
+	
+	<dependency>
+		  <groupId>org.springframework.security</groupId>
+		  <artifactId>spring-security-taglibs</artifactId>
+		</dependency>
+	
 	<!-- jsp테스트를위해 주석처리함  -->
-	<!-- <dependency>
+ <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
-        </dependency> -->
+        </dependency> 
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

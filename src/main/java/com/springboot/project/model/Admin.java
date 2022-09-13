@@ -7,9 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -18,30 +19,30 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "qna_board")
+@Table(name = "Admin")
 @EntityListeners(AuditingEntityListener.class)
-public class QnaVO {
-	
-	
+
+public class Admin {
+
 	@Id
 	@GeneratedValue
-	@Column(name = "qno")
-	private Long qno;
+	@Column(name = "id")
+	private int id;
 	
-	@Column(name = "q_title")
-	private String q_title;
+	@Column(name = "username")
+	private String username;
 	
-	@Column(name = "q_content")
-	private String q_content;
+	@Column(name = "password")
+	private String password;
 	
-	@Column(name = "q_writer")
-	private String q_writer;
+	@Column(name = "nickname")
+
+	private String nickname;
 	
-	@CreatedDate
-	private Date regdate;
+	@Column(name = "role")
+	private String role;
 	
-	@CreatedDate
-	private Date updatedate;
+	
 	
 	
 	
