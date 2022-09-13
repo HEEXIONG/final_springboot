@@ -19,7 +19,7 @@ import com.springboot.project.sevice.QnaService;
 
 import lombok.extern.log4j.Log4j;
 
-@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+//@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @Controller
 @RequestMapping("/qna/*")
 public class QnaController {

@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
 
 <div class="form-group">
@@ -38,6 +39,14 @@
      
  
 	<button data-oper='list' class="" onclick="location.href='/qna/list'">리스트</button>
+	
+<!--  댓글부분 -->
+			<div class="reply_subject">
+					<h2>댓글</h2>
+			</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 
